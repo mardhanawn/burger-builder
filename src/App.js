@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
+import Layout from './components/Layout/Layout';
+
 class App extends Component {
   render() {
     return (
-      <h1>Bee Burger Builder App</h1>
-    )
+      <div>
+        <Layout>
+          <h1>Bee Burger Builder App</h1>
+        </Layout>
+      </div>
+    );
   }
 }
 
