@@ -10,7 +10,7 @@ const orderSummary = (props) => {
                 <li key={igKey}>
                     <span style={{textTransform: 'capitalize'}}>{igKey}</span> : {props.ingredients[igKey]}
                 </li>
-            )
+            );
         });
 
     return (
@@ -22,8 +22,8 @@ const orderSummary = (props) => {
             </ul>
             <p><strong>Total Price : {props.price}</strong></p>
             <p>Continue to Checkout?</p>
-            <Button btnType="Danger" clicked={props.purchaseCancelled}>Cancel</Button>
-            <Button btnType="Success" clicked={props.purchaseContinued}>Continue</Button>
+            <Button btnType="Danger" clicked={props.purchaseCancelled}>CANCEL</Button>
+            <Button btnType="Success" clicked={props.purchaseContinued}>CONTINUE</Button>
         </Aux>
     )
 }
