@@ -69,6 +69,7 @@ class BurgerBuilder extends Component {
         }
         let orderSummary = null;
         let burger =this.state.error ? <p>Ingredients can't be loaded!</p> : <Spinner />
+        
         if (this.props.ings) {
             burger = ( 
                 <Aux>
@@ -112,9 +113,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onIngredientAdded: (ingName) => dispatch({type: actionTypes.ADD_INGREDIENT, ingredientname: ingName}),
-        onIngredientRemoved: (ingName) => dispatch({type: actionTypes.REMOVE_INGREDIENT, ingredientname: ingName})
-    };
+        onIngredientAdded: (ingName) => dispatch({type: actionTypes.ADD_INGREDIENT, ingredientName: ingName}),
+        onIngredientRemoved: (ingName) => dispatch({type: actionTypes.REMOVE_INGREDIENT, ingredientName: ingName})
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(BurgerBuilder, axios));

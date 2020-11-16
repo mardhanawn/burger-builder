@@ -135,6 +135,16 @@ class ContactData extends Component {
             isValid = value.length <= rules.maxLength && isValid
         }
 
+        if (rules.isEmail) {
+            const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+            isValid = pattern.test(value) && isValid
+        }
+
+        if (rules.isNumeric) {
+            const pattern = /^\d+$/;
+            isValid = pattern.test(value) && isValid
+        }
+
         return isValid;
     }
 
@@ -167,7 +177,6 @@ class ContactData extends Component {
         }
         let form = (
             <form onSubmit={this.orderHandler}>
-                {/* <Input elementType="" element="" value="" /> */}
                 {formElementsArray.map(formElement => (
                     <Input
                         key={formElement.id}
@@ -189,9 +198,6 @@ class ContactData extends Component {
             <div className={classes.ContactData}>
                 <h4>Enter your Contact Data</h4>
                 {form}
-                <Button 
-                    btnType="Success"
-                    clicked={this.orderHandler}>ORDER</Button>
             </div>
         );
     }
