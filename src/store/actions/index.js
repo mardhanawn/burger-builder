@@ -5,10 +5,11 @@ export {
 } from './burgerBuilder';
 
 export {
-    // purchaseBurgerSuccess,
-    // purchaseBurgerFail,
-    // purchaseBurgerStart,
     purchaseBurger,
     purchaseInit,
     fetchOrders
 } from './order';
+
+export {
+    auth
+} from './auth';
