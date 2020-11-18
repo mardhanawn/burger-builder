@@ -30,7 +30,7 @@ export const auth = (email, password) => {
             password: password,
             returnSecureToken: true
         }
-        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBgERW6LcEKtAPi_vjJzEtIOauxMDNhcIc', authData)
+        axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBgERW6LcEKtAPi_vjJzEtIOauxMDNhcIc', authData)
             .then(response => {
                 console.log(response)
                 dispatch(authSuccess(response.data));
